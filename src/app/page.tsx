@@ -53,28 +53,28 @@ const portfolio = [
     category: "Desarrollo Web",
     desc: "Sitio corporativo completo con blog, panel de administración y optimización SEO.",
     tags: ["Next.js", "Tailwind", "TypeScript"],
-    gradient: "from-purple to-purple-dark",
+    image: "/project-techcorp.png",
   },
   {
     title: "ShopNow",
     category: "E-commerce",
     desc: "Tienda en línea con carrito de compras, pasarela de pagos y panel de inventario.",
     tags: ["Next.js", "Stripe", "PostgreSQL"],
-    gradient: "from-cyan to-purple-dark",
+    image: "/project-shopnow.png",
   },
   {
     title: "Innova",
     category: "Automatización",
     desc: "Sistema de automatización de procesos administrativos con IA y reporting en tiempo real.",
     tags: ["Python", "IA", "APIs"],
-    gradient: "from-purple-light to-purple-dark",
+    image: "/project-innova.png",
   },
   {
     title: "FlowStack",
     category: "Plataforma SaaS",
     desc: "Plataforma de automatización con flujos visuales, integraciones y analytics avanzados.",
     tags: ["React", "Node.js", "MongoDB"],
-    gradient: "from-purple-dark to-cyan",
+    image: "/project-flowstack.png",
   },
 ];
 
@@ -231,7 +231,8 @@ export default function Home() {
 
       {/* Hero */}
       <section id="hero" className="relative flex min-h-screen items-center justify-center bg-black overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple/5 via-black to-black" />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url(/hero-banner.png)" }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-dark/80 via-black/70 to-black" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <div className="mb-6 inline-block rounded-full border border-purple/30 bg-purple/10 px-4 py-1 text-sm text-purple-light">
             Transformación digital para tu negocio
@@ -288,8 +289,10 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2">
             {portfolio.map((project) => (
               <div key={project.title} className="group overflow-hidden rounded-xl border border-zinc-200 bg-white transition-all hover:shadow-lg">
-                <div className={`flex h-48 items-center justify-center bg-gradient-to-br ${project.gradient} p-6`}>
-                  <h3 className="text-3xl font-bold text-white drop-shadow-lg">{project.title}</h3>
+                <div className="relative flex h-48 items-center justify-center bg-zinc-900 p-6">
+                  <div className="absolute inset-0 bg-cover bg-center opacity-60" style={{ backgroundImage: `url(${project.image})` }} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <h3 className="relative z-10 text-3xl font-bold text-white drop-shadow-lg">{project.title}</h3>
                 </div>
                 <div className="p-6">
                   <span className="mb-2 inline-block rounded-full bg-purple/10 px-3 py-1 text-xs font-medium text-purple">
