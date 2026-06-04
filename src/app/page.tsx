@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, ArrowRight, CheckCircle, ChevronRight, Star, Mail, Phone, MapPin } from "lucide-react";
+import { Menu, X, ArrowRight, CheckCircle, ChevronRight, Star, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 
 const navLinks = [
   { label: "Inicio", href: "#hero" },
   { label: "Servicios", href: "#servicios" },
+  { label: "Portafolio", href: "#portafolio" },
+  { label: "Precios", href: "#precios" },
   { label: "Nosotros", href: "#nosotros" },
+  { label: "Equipo", href: "#equipo" },
   { label: "Proceso", href: "#proceso" },
   { label: "Contacto", href: "#contacto" },
 ];
@@ -44,11 +47,69 @@ const services = [
   },
 ];
 
+const portfolio = [
+  {
+    title: "TechCorp",
+    category: "Desarrollo Web",
+    desc: "Sitio corporativo completo con blog, panel de administración y optimización SEO.",
+    tags: ["Next.js", "Tailwind", "TypeScript"],
+    gradient: "from-purple to-purple-dark",
+  },
+  {
+    title: "ShopNow",
+    category: "E-commerce",
+    desc: "Tienda en línea con carrito de compras, pasarela de pagos y panel de inventario.",
+    tags: ["Next.js", "Stripe", "PostgreSQL"],
+    gradient: "from-cyan to-purple-dark",
+  },
+  {
+    title: "Innova",
+    category: "Automatización",
+    desc: "Sistema de automatización de procesos administrativos con IA y reporting en tiempo real.",
+    tags: ["Python", "IA", "APIs"],
+    gradient: "from-purple-light to-purple-dark",
+  },
+  {
+    title: "FlowStack",
+    category: "Plataforma SaaS",
+    desc: "Plataforma de automatización con flujos visuales, integraciones y analytics avanzados.",
+    tags: ["React", "Node.js", "MongoDB"],
+    gradient: "from-purple-dark to-cyan",
+  },
+];
+
 const stats = [
   { value: "50+", label: "Proyectos entregados" },
   { value: "30+", label: "Clientes satisfechos" },
   { value: "5+", label: "Años de experiencia" },
   { value: "98%", label: "Satisfacción" },
+];
+
+const team = [
+  {
+    name: "Fredy Amado",
+    role: "Fundador & Desarrollador Full Stack",
+    desc: "Especialista en Next.js, React y automatización con IA. Creador de múltiples herramientas CLI.",
+    initials: "FA",
+  },
+  {
+    name: "Ana Rodríguez",
+    role: "Diseñadora UX/UI",
+    desc: "Apasionada por crear interfaces limpias, accesibles y centradas en el usuario.",
+    initials: "AR",
+  },
+  {
+    name: "Carlos Mendoza",
+    role: "Ingeniero de Software",
+    desc: "Experto en backend, bases de datos y arquitectura de sistemas escalables.",
+    initials: "CM",
+  },
+  {
+    name: "Laura Gutiérrez",
+    role: "Especialista en Marketing",
+    desc: "Estrategias SEO, SEM y content marketing para impulsar tu presencia digital.",
+    initials: "LG",
+  },
 ];
 
 const testimonials = [
@@ -78,6 +139,50 @@ const steps = [
   { number: "03", title: "Desarrollo", desc: "Construimos tu proyecto con metodologías ágiles y entregas iterativas." },
   { number: "04", title: "Lanzamiento", desc: "Desplegamos, probamos y ponemos en marcha tu solución." },
   { number: "05", title: "Soporte", desc: "Acompañamiento continuo para garantizar el éxito a largo plazo." },
+];
+
+const plans = [
+  {
+    name: "Básico",
+    price: "$499",
+    desc: "Perfecto para emprendimientos que inician su presencia digital.",
+    features: [
+      "Sitio web de 3 páginas",
+      "Diseño responsive",
+      "Formulario de contacto",
+      "SEO básico",
+      "Hosting 1 año",
+    ],
+    popular: false,
+  },
+  {
+    name: "Profesional",
+    price: "$1,299",
+    desc: "Ideal para empresas que buscan una solución completa.",
+    features: [
+      "Sitio web de 5 páginas",
+      "Diseño UX/UI personalizado",
+      "Panel administrador",
+      "SEO avanzado",
+      "Integración redes sociales",
+      "Soporte 3 meses",
+    ],
+    popular: true,
+  },
+  {
+    name: "Enterprise",
+    price: "Personalizado",
+    desc: "Para proyectos grandes con necesidades específicas.",
+    features: [
+      "Sitio web ilimitado en páginas",
+      "Automatización de procesos",
+      "Sistema a medida",
+      "API e integraciones",
+      "Consultoría dedicada",
+      "Soporte prioritario 24/7",
+    ],
+    popular: false,
+  },
 ];
 
 export default function Home() {
@@ -171,6 +276,95 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Portfolio */}
+      <section id="portafolio" className="bg-zinc-50 px-4 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-black md:text-4xl">Portafolio</h2>
+            <p className="mx-auto max-w-2xl text-zinc-600">
+              Proyectos que hablan por sí solos. Cada trabajo refleja nuestro compromiso con la calidad.
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            {portfolio.map((project) => (
+              <div key={project.title} className="group overflow-hidden rounded-xl border border-zinc-200 bg-white transition-all hover:shadow-lg">
+                <div className={`flex h-48 items-center justify-center bg-gradient-to-br ${project.gradient} p-6`}>
+                  <h3 className="text-3xl font-bold text-white drop-shadow-lg">{project.title}</h3>
+                </div>
+                <div className="p-6">
+                  <span className="mb-2 inline-block rounded-full bg-purple/10 px-3 py-1 text-xs font-medium text-purple">
+                    {project.category}
+                  </span>
+                  <p className="mb-4 text-sm leading-relaxed text-zinc-600">{project.desc}</p>
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-600">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <a href="#contacto" className="inline-flex items-center gap-1 text-sm font-semibold text-purple transition-colors hover:text-purple-light">
+                    Ver proyecto <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="precios" className="bg-white px-4 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-black md:text-4xl">Planes y Precios</h2>
+            <p className="mx-auto max-w-2xl text-zinc-600">
+              Elige el plan que mejor se adapte a las necesidades de tu proyecto.
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {plans.map((plan) => (
+              <div key={plan.name} className={`relative flex flex-col rounded-2xl border p-8 transition-all hover:shadow-lg ${
+                plan.popular
+                  ? "border-purple bg-purple text-white shadow-lg shadow-purple/20 scale-105 md:scale-110"
+                  : "border-zinc-200 bg-white text-black"
+              }`}>
+                {plan.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-yellow px-4 py-1 text-xs font-bold text-black">
+                    Más popular
+                  </div>
+                )}
+                <h3 className={`mb-1 text-xl font-bold ${plan.popular ? "text-white" : "text-black"}`}>{plan.name}</h3>
+                <p className={`mb-4 text-sm ${plan.popular ? "text-white/80" : "text-zinc-500"}`}>{plan.desc}</p>
+                <div className={`mb-6 text-4xl font-bold ${plan.popular ? "text-white" : "text-black"}`}>
+                  {plan.price}
+                  {plan.price !== "Personalizado" && <span className="text-lg font-normal text-zinc-400">/proyecto</span>}
+                </div>
+                <ul className="mb-8 flex-1 space-y-3">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2 text-sm">
+                      <CheckCircle className={`mt-0.5 h-4 w-4 shrink-0 ${plan.popular ? "text-yellow" : "text-purple"}`} />
+                      <span className={plan.popular ? "text-white/90" : "text-zinc-600"}>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#contacto"
+                  className={`flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-all ${
+                    plan.popular
+                      ? "bg-white text-purple hover:bg-zinc-100"
+                      : "bg-purple text-white hover:bg-purple-light"
+                  }`}
+                >
+                  {plan.price === "Personalizado" ? "Cotizar ahora" : "Contratar"}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About / Stats */}
       <section id="nosotros" className="bg-black px-4 py-24">
         <div className="mx-auto max-w-7xl">
@@ -215,8 +409,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Team */}
+      <section id="equipo" className="bg-white px-4 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-black md:text-4xl">Nuestro Equipo</h2>
+            <p className="mx-auto max-w-2xl text-zinc-600">
+              Conoce a las personas detrás de Nebula. Un equipo apasionado por la tecnología y el diseño.
+            </p>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {team.map((member) => (
+              <div key={member.name} className="group rounded-xl border border-zinc-200 bg-white p-6 text-center transition-all hover:border-purple/30 hover:shadow-lg hover:shadow-purple/5">
+                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-purple to-purple-light text-2xl font-bold text-white shadow-md">
+                  {member.initials}
+                </div>
+                <h3 className="text-lg font-semibold text-black">{member.name}</h3>
+                <p className="mb-2 text-sm font-medium text-purple">{member.role}</p>
+                <p className="text-sm leading-relaxed text-zinc-500">{member.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Process */}
-      <section id="proceso" className="bg-white px-4 py-24">
+      <section id="proceso" className="bg-zinc-50 px-4 py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-black md:text-4xl">Cómo trabajamos</h2>
@@ -232,7 +450,7 @@ export default function Home() {
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-purple text-sm font-bold text-white md:z-10">
                     {step.number}
                   </div>
-                  <div className="flex-1 rounded-xl border border-zinc-200 p-5 transition-all hover:border-purple/30">
+                  <div className="flex-1 rounded-xl border border-zinc-200 bg-white p-5 transition-all hover:border-purple/30">
                     <h3 className="mb-1 text-lg font-semibold text-black">{step.title}</h3>
                     <p className="text-sm text-zinc-600">{step.desc}</p>
                   </div>
@@ -244,7 +462,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-zinc-50 px-4 py-24">
+      <section className="bg-white px-4 py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-black md:text-4xl">Lo que dicen nuestros clientes</h2>
