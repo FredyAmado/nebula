@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X, ArrowRight, CheckCircle, ChevronRight, Star, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import Carrusel from "@/components/Carrusel";
 
 const navLinks = [
   { label: "Inicio", href: "#hero" },
@@ -265,15 +266,7 @@ export default function Home() {
               Ofrecemos soluciones completas de tecnología y diseño para impulsar tu presencia digital.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <div key={service.title} className="group rounded-xl border border-zinc-200 bg-white p-6 transition-all hover:border-purple/30 hover:shadow-lg hover:shadow-purple/5">
-                <div className="mb-4 text-3xl">{service.icon}</div>
-                <h3 className="mb-2 text-lg font-semibold text-black">{service.title}</h3>
-                <p className="text-sm leading-relaxed text-zinc-600">{service.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Carrusel slides={services} />
         </div>
       </section>
 
