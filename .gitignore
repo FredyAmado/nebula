@@ -7,4 +7,9 @@ next-env.d.ts
 .vercel
 output/
 .codegraph/
+codegraph.db
+codegraph.db-shm
+codegraph.db-wal
+daemon.log
+daemon.pid
 DOCUMENTACION.md
