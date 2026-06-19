@@ -8,7 +8,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   title: "Nebula — Agencia de Desarrollo Web",
   description: "Creamos sitios web modernos, rápidos y profesionales para tu negocio. Next.js, Tailwind, automatización.",
-  metadataBase: new URL("https://nebula.agencia"),
+  metadataBase: new URL("https://nebula-three-pearl.vercel.app"),
   openGraph: {
     title: "Nebula — Agencia de Desarrollo Web",
     description: "Creamos sitios web modernos, rápidos y profesionales para tu negocio.",

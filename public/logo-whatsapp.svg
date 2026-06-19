@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3C2654"/>
+      <stop offset="50%" stop-color="#654090"/>
+      <stop offset="100%" stop-color="#8B6BAE"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#654090"/>
+      <stop offset="100%" stop-color="#3C2654"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer ring / nebula orbit -->
+  <circle cx="512" cy="512" r="440" fill="none" stroke="url(#purpleGrad)" stroke-width="2" opacity="0.15"/>
+
+  <!-- Constellation N -->
+  <!-- Main polyline: left-up, diagonal-down-right, right-up -->
+  <polyline points="220,780 360,274 664,780 804,274"
+            fill="none" stroke="url(#purpleGrad)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"
+            stroke-dasharray="4 8" opacity="0.6"/>
+
+  <polyline points="220,780 360,274 664,780 804,274"
+            fill="none" stroke="url(#purpleGrad2)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"
+            opacity="0.9"/>
+
+  <!-- Subtle connection lines -->
+  <line x1="360" y1="274" x2="664" y2="780" stroke="#654090" stroke-width="2" opacity="0.12"/>
+
+  <!-- Constellation nodes -->
+  <!-- Bottom-left -->
+  <circle cx="220" cy="780" r="18" fill="#3C2654" opacity="0.8"/>
+  <circle cx="220" cy="780" r="8" fill="#8B6BAE"/>
+
+  <!-- Top-left -->
+  <circle cx="360" cy="274" r="22" fill="#3C2654" opacity="0.8"/>
+  <circle cx="360" cy="274" r="10" fill="#8B6BAE"/>
+  <circle cx="360" cy="274" r="4" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Bottom-right -->
+  <circle cx="664" cy="780" r="22" fill="#3C2654" opacity="0.8"/>
+  <circle cx="664" cy="780" r="10" fill="#8B6BAE"/>
+  <circle cx="664" cy="780" r="4" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Top-right -->
+  <circle cx="804" cy="274" r="18" fill="#3C2654" opacity="0.8"/>
+  <circle cx="804" cy="274" r="8" fill="#8B6BAE"/>
+
+  <!-- Small decorative stars -->
+  <circle cx="160" cy="400" r="3" fill="#654090" opacity="0.3"/>
+  <circle cx="864" cy="400" r="3" fill="#654090" opacity="0.3"/>
+  <circle cx="300" cy="160" r="2" fill="#8B6BAE" opacity="0.25"/>
+  <circle cx="720" cy="160" r="2" fill="#8B6BAE" opacity="0.25"/>
+  <circle cx="440" cy="860" r="3" fill="#654090" opacity="0.2"/>
+  <circle cx="580" cy="860" r="2" fill="#654090" opacity="0.2"/>
+  <circle cx="140" cy="600" r="2" fill="#8B6BAE" opacity="0.2"/>
+  <circle cx="880" cy="600" r="2" fill="#8B6BAE" opacity="0.2"/>
+  <circle cx="290" cy="530" r="2" fill="#654090" opacity="0.15"/>
+  <circle cx="740" cy="530" r="2" fill="#654090" opacity="0.15"/>
+
+  <!-- Nebula glow -->
+  <circle cx="512" cy="512" r="200" fill="#654090" opacity="0.03"/>
+  <circle cx="512" cy="512" r="300" fill="#8B6BAE" opacity="0.02"/>
+</svg>

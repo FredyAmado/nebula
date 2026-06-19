@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X, ArrowRight, CheckCircle, ChevronRight, Star, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import Carrusel from "@/components/Carrusel";
 
@@ -73,9 +74,23 @@ const portfolio = [
   {
     title: "FlowStack",
     category: "Plataforma SaaS",
-    desc: "Plataforma de automatización con flujos visuales, integraciones y analytics avanzados.",
-    tags: ["React", "Node.js", "MongoDB"],
+    desc: "Plataforma de automatización con flujos visuales, trazabilidad completa e integración multi-sistema.",
+    tags: ["Next.js", "Tailwind", "PostgreSQL", "Prisma"],
     image: "/project-flowstack.png",
+  },
+  {
+    title: "Mantus",
+    category: "Desarrollo Web",
+    desc: "Sitio corporativo para empresa de mantenimiento técnico integral con diseño moderno y experiencia naranja sobre fondo oscuro.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    image: "/project-mantus.png",
+  },
+  {
+    title: "FullSports",
+    category: "E-commerce",
+    desc: "Tienda deportiva en línea con carrito de compras persistente, panel administrador y catálogo completo con filtros.",
+    tags: ["HTML", "CSS", "JavaScript", "localStorage"],
+    image: "/project-fullsports.png",
   },
 ];
 
@@ -232,8 +247,7 @@ export default function Home() {
 
       {/* Hero */}
       <section id="hero" className="relative flex min-h-screen items-center justify-center bg-black overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url(/hero-banner.png)" }} />
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-dark/80 via-black/70 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-dark via-black/90 to-black" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <div className="mb-6 inline-block rounded-full border border-purple/30 bg-purple/10 px-4 py-1 text-sm text-purple-light">
             Transformación digital para tu negocio
@@ -565,8 +579,22 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="border-t border-zinc-800 pt-8 text-center">
-            <p className="text-sm text-zinc-600">
+          <div className="border-t border-zinc-800 pt-8">
+            <div className="mb-4 flex flex-wrap justify-center gap-6">
+              <Link href="/aviso-privacidad" className="text-sm text-zinc-500 transition-colors hover:text-white">
+                Aviso de Privacidad
+              </Link>
+              <Link href="/privacidad" className="text-sm text-zinc-500 transition-colors hover:text-white">
+                Política de Privacidad
+              </Link>
+              <Link href="/terminos" className="text-sm text-zinc-500 transition-colors hover:text-white">
+                Términos y Condiciones
+              </Link>
+              <Link href="/eliminacion-datos" className="text-sm text-zinc-500 transition-colors hover:text-white">
+                Eliminación de Datos
+              </Link>
+            </div>
+            <p className="text-center text-sm text-zinc-600">
               &copy; {new Date().getFullYear()} Nebula. Todos los derechos reservados.
             </p>
           </div>
@@ -578,10 +606,22 @@ export default function Home() {
 
 function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [consent, setConsent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (!consent) return;
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data = { name: formData.get("name") as string, email: formData.get("email") as string, phone: formData.get("phone") as string, message: formData.get("message") as string, consent: true };
+    try {
+      const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+      if (!res.ok) throw new Error("Error");
+      setSubmitted(true);
+    } catch {
+      setError(true);
+    }
   };
 
   if (submitted) {
@@ -599,22 +639,47 @@ function ContactForm() {
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-1 block text-sm font-medium text-black">Nombre</label>
-          <input id="name" required className="w-full rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-black placeholder-zinc-400 focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple" placeholder="Tu nombre" />
+          <input id="name" name="name" required className="w-full rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-black placeholder-zinc-400 focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple" placeholder="Tu nombre" />
         </div>
         <div>
           <label htmlFor="email" className="mb-1 block text-sm font-medium text-black">Email</label>
-          <input id="email" type="email" required className="w-full rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-black placeholder-zinc-400 focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple" placeholder="tu@email.com" />
+          <input id="email" name="email" type="email" required className="w-full rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-black placeholder-zinc-400 focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple" placeholder="tu@email.com" />
         </div>
       </div>
       <div>
         <label htmlFor="phone" className="mb-1 block text-sm font-medium text-black">Teléfono</label>
-        <input id="phone" type="tel" className="w-full rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-black placeholder-zinc-400 focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple" placeholder="+57 300 123 4567" />
+        <input id="phone" name="phone" type="tel" className="w-full rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-black placeholder-zinc-400 focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple" placeholder="+57 300 123 4567" />
       </div>
       <div>
         <label htmlFor="message" className="mb-1 block text-sm font-medium text-black">Mensaje</label>
-        <textarea id="message" rows={4} required className="w-full rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-black placeholder-zinc-400 focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple" placeholder="Cuéntanos sobre tu proyecto..." />
+        <textarea id="message" name="message" rows={4} required className="w-full rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-black placeholder-zinc-400 focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple" placeholder="Cuéntanos sobre tu proyecto..." />
       </div>
-      <button type="submit" className="flex w-full items-center justify-center gap-2 rounded-lg bg-purple px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-purple-light">
+      <div className="flex items-start gap-2">
+        <input
+          id="consent"
+          type="checkbox"
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          className="mt-1 h-4 w-4 shrink-0 rounded border-zinc-300 text-purple focus:ring-purple"
+        />
+        <label htmlFor="consent" className="text-sm text-zinc-600">
+          He leído y acepto el{" "}
+          <Link href="/aviso-privacidad" className="text-purple underline hover:text-purple-light">
+            Aviso de Privacidad
+          </Link>{" "}
+          de Nebula según la Ley 1581 de 2012.
+        </label>
+      </div>
+      {error && <p className="text-sm text-red-500">Error al enviar. Intenta de nuevo o escríbenos a contacto@nebula.agencia.</p>}
+      <button
+        type="submit"
+        disabled={!consent}
+        className={`flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold text-white transition-all ${
+          consent
+            ? "bg-purple hover:bg-purple-light"
+            : "bg-zinc-300 cursor-not-allowed"
+        }`}
+      >
         Enviar mensaje
         <ArrowRight className="h-4 w-4" />
       </button>
