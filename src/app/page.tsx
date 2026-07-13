@@ -18,79 +18,94 @@ const navLinks = [
 
 const services = [
   {
-    title: "Desarrollo Web",
+    title: "Branding",
+    desc: "Construimos la identidad visual de tu marca: logotipos, paletas de color y guías de marca.",
+    icon: "✨",
+  },
+  {
+    title: "Social Media",
+    desc: "Gestión de redes sociales, contenido estratégico y community management para tu marca.",
+    icon: "📱",
+  },
+  {
+    title: "Google & Facebook Ads",
+    desc: "Campañas publicitarias pagas en Google y Facebook para atraer más clientes calificados.",
+    icon: "🎯",
+  },
+  {
+    title: "Content Marketing",
+    desc: "Creación de contenido estratégico: blogs, newsletters y copywriting para tu marca.",
+    icon: "✍️",
+  },
+  {
+    title: "SEO",
+    desc: "Posiciona tu negocio en buscadores con estrategias de SEO técnico, on-page y contenido optimizado.",
+    icon: "📈",
+  },
+  {
+    title: "Analytics",
+    desc: "Dashboards de métricas, informes de rendimiento y análisis de datos para decisiones inteligentes.",
+    icon: "📊",
+  },
+  {
+    title: "Email Marketing",
+    desc: "Campañas de correo automatizadas, newsletters y embudos de conversión que venden.",
+    icon: "📧",
+  },
+  {
+    title: "Diseño Web",
     desc: "Sitios corporativos, landing pages y aplicaciones web modernas con Next.js y Tailwind.",
     icon: "🌐",
-  },
-  {
-    title: "Automatización",
-    desc: "Optimiza procesos administrativos con flujos inteligentes que ahorran tiempo y recursos.",
-    icon: "⚡",
-  },
-  {
-    title: "Consultoría TI",
-    desc: "Asesoramiento técnico para elegir las mejores herramientas y estrategias digitales.",
-    icon: "💡",
   },
   {
     title: "Diseño UX/UI",
     desc: "Interfaces limpias, accesibles y centradas en el usuario para maximizar conversiones.",
     icon: "🎨",
   },
-  {
-    title: "SEO & Marketing",
-    desc: "Posiciona tu negocio en los buscadores y atrae más clientes con estrategias digitales.",
-    icon: "📈",
-  },
-  {
-    title: "Soporte Técnico",
-    desc: "Mantenimiento continuo, actualizaciones y soporte para mantener tu sitio siempre activo.",
-    icon: "🔧",
-  },
 ];
 
 const portfolio = [
   {
-    title: "TechCorp",
-    category: "Desarrollo Web",
-    desc: "Sitio corporativo completo con blog, panel de administración y optimización SEO.",
-    tags: ["Next.js", "Tailwind", "TypeScript"],
+    title: "Café Aromas",
+    category: "Branding",
+    desc: "Identidad visual completa: logotipo, paleta de color, papelería y guía de marca para una cafetería artesanal.",
+    tags: ["Branding", "Identidad Visual", "Packaging"],
     image: "/project-techcorp.png",
   },
   {
-    title: "ShopNow",
-    category: "E-commerce",
-    desc: "Tienda en línea con carrito de compras, pasarela de pagos y panel de inventario.",
-    tags: ["Next.js", "Stripe", "PostgreSQL"],
+    title: "ModaTrend",
+    category: "Social Media",
+    desc: "Estrategia de contenido para redes, campañas estacionales y community management que duplicó el engagement.",
+    tags: ["Instagram", "TikTok", "Meta Ads"],
     image: "/project-shopnow.png",
   },
   {
-    title: "Innova",
-    category: "Automatización",
-    desc: "Sistema de automatización de procesos administrativos con IA y reporting en tiempo real.",
-    tags: ["Python", "IA", "APIs"],
+    title: "Inmobiliaria Nova",
+    category: "Diseño Web",
+    desc: "Sitio web corporativo con catálogo de propiedades, tour virtual y formularios de contacto automatizados.",
+    tags: ["Next.js", "UX/UI", "SEO"],
     image: "/project-innova.png",
   },
   {
     title: "FlowStack",
-    category: "Plataforma SaaS",
-    desc: "Plataforma de automatización con flujos visuales, trazabilidad completa e integración multi-sistema.",
-    tags: ["Next.js", "Tailwind", "PostgreSQL", "Prisma"],
+    category: "Content Marketing",
+    desc: "Estrategia de contenido SEO, blog técnico y email nurturing que generó 200+ leads calificados en 3 meses.",
+    tags: ["SEO", "Blog", "Email Marketing"],
     image: "/project-flowstack.png",
   },
   {
-    title: "Mantus",
-    category: "Desarrollo Web",
-    desc: "Sitio corporativo para empresa de mantenimiento técnico integral con diseño moderno y experiencia naranja sobre fondo oscuro.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    image: "/project-mantus.png",
+    title: "FullSports",
+    category: "Google Ads",
+    desc: "Campañas de Google Shopping y Search Ads optimizadas que redujeron el CPA un 35% y triplicaron ventas.",
+    tags: ["Google Ads", "Shopping", "Analytics"],
+    image: "/project-fullsports.png",
   },
   {
-    title: "FullSports",
-    category: "E-commerce",
-    desc: "Tienda deportiva en línea con carrito de compras persistente, panel administrador y catálogo completo con filtros.",
-    tags: ["HTML", "CSS", "JavaScript", "localStorage"],
-    image: "/project-fullsports.png",
+    title: "Mantus",
+    category: "Transformación Digital",
+    desc: "Rediseño web + branding + automatización de atención al cliente con WhatsApp Business API.",
+    tags: ["Diseño Web", "WhatsApp API", "Marketing"],
+    image: "/project-mantus.png",
   },
 ];
 
@@ -104,8 +119,8 @@ const stats = [
 const team = [
   {
     name: "Fredy Amado",
-    role: "Fundador & Desarrollador Full Stack",
-    desc: "Especialista en Next.js, React y automatización con IA. Creador de múltiples herramientas CLI.",
+    role: "Fundador & Director Creativo",
+    desc: "Especialista en marketing digital, diseño web y automatización. Creador de estrategias digitales que generan resultados.",
     initials: "FA",
   },
   {
@@ -116,8 +131,8 @@ const team = [
   },
   {
     name: "Carlos Mendoza",
-    role: "Ingeniero de Software",
-    desc: "Experto en backend, bases de datos y arquitectura de sistemas escalables.",
+    role: "Diseñador Web",
+    desc: "Experto en desarrollo frontend, UX/UI y creación de sitios web modernos con alto rendimiento.",
     initials: "CM",
   },
   {
@@ -144,7 +159,7 @@ const testimonials = [
   {
     name: "Ana Martínez",
     role: "Fundadora, ShopNow",
-    text: "La automatización de nuestros procesos nos ahorró horas de trabajo cada semana. Increíble resultado.",
+    text: "Las campañas de Google Ads transformaron nuestras ventas. Resultados profesionales desde el primer mes.",
     rating: 5,
   },
 ];
@@ -159,43 +174,46 @@ const steps = [
 
 const plans = [
   {
-    name: "Básico",
-    price: "$499",
+    name: "Starter",
+    price: "$299",
     desc: "Perfecto para emprendimientos que inician su presencia digital.",
     features: [
-      "Sitio web de 3 páginas",
-      "Diseño responsive",
-      "Formulario de contacto",
-      "SEO básico",
-      "Hosting 1 año",
+      "Branding básico (logo + paleta)",
+      "Perfiles en redes sociales",
+      "1 campaña Google o Facebook Ads",
+      "Reporte mensual de resultados",
+      "Soporte por email",
     ],
     popular: false,
   },
   {
     name: "Profesional",
-    price: "$1,299",
-    desc: "Ideal para empresas que buscan una solución completa.",
+    price: "$599",
+    desc: "Ideal para empresas que buscan crecimiento consistente.",
     features: [
-      "Sitio web de 5 páginas",
-      "Diseño UX/UI personalizado",
-      "Panel administrador",
-      "SEO avanzado",
-      "Integración redes sociales",
-      "Soporte 3 meses",
+      "Identidad visual completa",
+      "Social Media management",
+      "3 campañas Ads mensuales",
+      "Content marketing (4 piezas/mes)",
+      "SEO on-page + técnico",
+      "Dashboard de analytics",
+      "Soporte prioritario",
     ],
     popular: true,
   },
   {
     name: "Enterprise",
     price: "Personalizado",
-    desc: "Para proyectos grandes con necesidades específicas.",
+    desc: "Para empresas que requieren una estrategia 360°.",
     features: [
-      "Sitio web ilimitado en páginas",
-      "Automatización de procesos",
-      "Sistema a medida",
-      "API e integraciones",
-      "Consultoría dedicada",
-      "Soporte prioritario 24/7",
+      "Estrategia de marca integral",
+      "Social Media + Ads sin límite",
+      "Content + email automation",
+      "SEO avanzado + link building",
+      "Analytics con reporting semanal",
+      "Diseño web o landing page incluido",
+      "Consultoría estratégica mensual",
+      "Soporte 24/7 dedicado",
     ],
     popular: false,
   },
@@ -250,14 +268,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-purple-dark via-black/90 to-black" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <div className="mb-6 inline-block rounded-full border border-purple/30 bg-purple/10 px-4 py-1 text-sm text-purple-light">
-            Transformación digital para tu negocio
+            Agencia de marketing digital y diseño web
           </div>
           <h1 className="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">
-            Creamos soluciones digitales{" "}
-            <span className="text-purple">que impulsan tu negocio</span>
+            Hacemos crecer tu marca con{" "}
+            <span className="text-purple">marketing y diseño web</span>
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-zinc-400">
-            Desarrollo web, automatización de procesos y consultoría TI. Ayudamos a empresas como la tuya a crecer con tecnología inteligente.
+            Estrategias de marketing digital, branding, publicidad online y diseño de sitios web que atraen clientes y generan resultados reales para tu negocio.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href="#contacto" className="flex items-center gap-2 rounded-lg bg-purple px-8 py-3 text-base font-semibold text-white transition-all hover:bg-purple-light">
@@ -277,7 +295,7 @@ export default function Home() {
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-black md:text-4xl">Nuestros Servicios</h2>
             <p className="mx-auto max-w-2xl text-zinc-600">
-              Ofrecemos soluciones completas de tecnología y diseño para impulsar tu presencia digital.
+              De la estrategia a la ejecución: todo lo que necesitas para destacar en el mundo digital.
             </p>
           </div>
           <Carrusel slides={services} />
@@ -290,7 +308,7 @@ export default function Home() {
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-black md:text-4xl">Portafolio</h2>
             <p className="mx-auto max-w-2xl text-zinc-600">
-              Proyectos que hablan por sí solos. Cada trabajo refleja nuestro compromiso con la calidad.
+              Resultados que hablan por sí solos. Cada proyecto refleja nuestro compromiso con tu crecimiento.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
@@ -329,7 +347,7 @@ export default function Home() {
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-black md:text-4xl">Planes y Precios</h2>
             <p className="mx-auto max-w-2xl text-zinc-600">
-              Elige el plan que mejor se adapte a las necesidades de tu proyecto.
+              Elige el plan que mejor se adapte a las metas de tu negocio. Todos incluyen acompañamiento continuo.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
@@ -348,7 +366,7 @@ export default function Home() {
                 <p className={`mb-4 text-sm ${plan.popular ? "text-white/80" : "text-zinc-500"}`}>{plan.desc}</p>
                 <div className={`mb-6 text-4xl font-bold ${plan.popular ? "text-white" : "text-black"}`}>
                   {plan.price}
-                  {plan.price !== "Personalizado" && <span className="text-lg font-normal text-zinc-400">/proyecto</span>}
+                  {plan.price !== "Personalizado" && <span className="text-lg font-normal text-zinc-400">/mes</span>}
                 </div>
                 <ul className="mb-8 flex-1 space-y-3">
                   {plan.features.map((feature) => (
@@ -381,18 +399,18 @@ export default function Home() {
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">Por qué elegirnos</h2>
             <p className="mx-auto max-w-2xl text-zinc-400">
-              Combinamos experiencia técnica con un enfoque centrado en el cliente para entregar resultados excepcionales.
+              Somos una agencia de marketing digital y diseño web que combina creatividad con datos para hacer crecer tu negocio.
             </p>
           </div>
           <div className="mb-16 grid gap-8 md:grid-cols-2">
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-white">Expertos en tecnología moderna</h3>
+              <h3 className="text-2xl font-bold text-white">Estrategia que vende</h3>
               <p className="leading-relaxed text-zinc-400">
-                Usamos las herramientas más avanzadas del mercado: Next.js, React, TypeScript, automatización con IA y más.
-                Cada proyecto es construido con estándares de calidad empresarial.
+                No hacemos diseño por diseñar. Cada campaña, cada pieza gráfica y cada línea de código está pensada para
+                atraer clientes, generar conversiones y hacer crecer tu negocio con resultados medibles.
               </p>
               <ul className="space-y-2">
-                {["Desarrollo ágil con entregas rápidas", "Diseño responsive y accesible", "Soporte técnico continuo"].map((item) => (
+                {["Estrategias basadas en datos y métricas reales", "Diseño web orientado a conversión", "Acompañamiento continuo en cada paso"].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-zinc-400">
                     <CheckCircle className="h-4 w-4 text-purple" />
                     {item}
@@ -403,8 +421,8 @@ export default function Home() {
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
               <h3 className="mb-4 text-lg font-semibold text-white">Nuestra filosofía</h3>
               <p className="leading-relaxed text-zinc-400">
-                Creemos en la tecnología como herramienta para liberar el potencial humano. Cada línea de código, cada
-                píxel y cada flujo de trabajo está diseñado para hacer tu vida más fácil y tu negocio más eficiente.
+                Creemos en el marketing como puente entre tu marca y las personas que la necesitan. Cada estrategia, cada
+                diseño y cada campaña está creado para conectar, comunicar y convertir.
               </p>
             </div>
           </div>
@@ -425,7 +443,7 @@ export default function Home() {
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-black md:text-4xl">Nuestro Equipo</h2>
             <p className="mx-auto max-w-2xl text-zinc-600">
-              Conoce a las personas detrás de Nebula. Un equipo apasionado por la tecnología y el diseño.
+              Conoce al equipo detrás de Nebula. Creativos, estrategas y desarrolladores apasionados por tu éxito.
             </p>
           </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -506,7 +524,7 @@ export default function Home() {
             ¿Listo para transformar tu negocio?
           </h2>
           <p className="mb-8 text-lg text-zinc-400">
-            Contáctanos hoy y descubre cómo podemos ayudarte a alcanzar tus objetivos digitales.
+            Cuéntanos sobre tu proyecto y descubre cómo podemos ayudarte a alcanzar tus metas de marketing y ventas.
           </p>
           <a href="#contacto" className="inline-flex items-center gap-2 rounded-lg bg-purple px-8 py-3 text-base font-semibold text-white transition-all hover:bg-purple-light">
             Solicita una cotización gratis
@@ -521,7 +539,7 @@ export default function Home() {
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-black md:text-4xl">Contáctanos</h2>
             <p className="mx-auto max-w-2xl text-zinc-600">
-              Estamos listos para escuchar tu proyecto. Déjanos un mensaje y te responderemos a la brevedad.
+              Cuéntanos sobre tu negocio y te propondremos una estrategia de marketing y diseño web a tu medida.
             </p>
           </div>
           <div className="grid gap-12 md:grid-cols-2">
@@ -645,6 +663,22 @@ function ContactForm() {
           <label htmlFor="email" className="mb-1 block text-sm font-medium text-black">Email</label>
           <input id="email" name="email" type="email" required className="w-full rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-black placeholder-zinc-400 focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple" placeholder="tu@email.com" />
         </div>
+      </div>
+      <div>
+        <label htmlFor="service" className="mb-1 block text-sm font-medium text-black">Servicio de interés</label>
+        <select id="service" name="service" className="w-full rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-black focus:border-purple focus:outline-none focus:ring-1 focus:ring-purple">
+          <option value="">Selecciona un servicio</option>
+          <option value="branding">Branding</option>
+          <option value="social-media">Social Media</option>
+          <option value="ads">Google & Facebook Ads</option>
+          <option value="content">Content Marketing</option>
+          <option value="seo">SEO</option>
+          <option value="analytics">Analytics</option>
+          <option value="email">Email Marketing</option>
+          <option value="web">Diseño Web</option>
+          <option value="ux-ui">Diseño UX/UI</option>
+          <option value="otro">Otro</option>
+        </select>
       </div>
       <div>
         <label htmlFor="phone" className="mb-1 block text-sm font-medium text-black">Teléfono</label>
